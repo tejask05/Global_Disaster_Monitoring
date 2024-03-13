@@ -207,14 +207,17 @@ else:
           
           titles = filtered_df['title'].dropna()
   
-          # Title for the word cloud
-          st.markdown("<h3 style='font-size: 20px;'>Disaster Event Title Word Cloud</h3>", unsafe_allow_html=True)
-  
-          # Generate word cloud
-          wordcloud = WordCloud(width=800, height=500, background_color='white').generate(' '.join(titles))
-  
-          # Display the word cloud using Streamlit
-          st.image(wordcloud.to_array(), use_column_width=True)
+          if not titles.empty:
+            # Title for the word cloud
+            st.markdown("<h3 style='font-size: 20px;'>Disaster Event Title Word Cloud</h3>", unsafe_allow_html=True)
+
+            # Generate word cloud
+            wordcloud = WordCloud(width=800, height=500, background_color='white').generate(' '.join(titles))
+
+            # Display the word cloud using Streamlit
+            st.image(wordcloud.to_array(), use_column_width=True)
+          else:
+              st.write("No titles available for the WordCloud.")
   
           
           
