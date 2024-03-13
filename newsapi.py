@@ -231,7 +231,25 @@ with st.expander(f"Insights"):
 
       
         #Fig 2
-        
+        event_counts = filtered_df['disaster_event'].value_counts().reset_index(name='count')
+
+        # Sort the event counts to find the top 5 disaster events
+        top_5_events = event_counts.head(7)
+
+        # Plot the horizontal bar chart using Plotly Express
+        fig_horizontal_bar = px.bar(
+            top_5_events,
+            x='count',
+            y='index',
+            orientation='h',
+            title='Top 5 Disaster Events',
+            labels={'index': 'Disaster Event', 'count': 'Count'},
+            width=800,
+            height=500
+        )
+
+        # Display the horizontal bar chart
+        st.plotly_chart(fig_horizontal_bar, use_container_width=True)        
 
         
         
