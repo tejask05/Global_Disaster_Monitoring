@@ -230,26 +230,7 @@ with st.expander(f"Insights"):
         st.plotly_chart(fig_donut, use_container_width=True)
 
       
-        #Fig 2
-        event_counts = filtered_df['disaster_event'].value_counts().reset_index(name='count')
-
-        # Sort the event counts to find the top 5 disaster events
-        top_5_events = event_counts.head(7)
-
-        # Plot the horizontal bar chart using Plotly Express
-        fig_horizontal_bar = px.bar(
-            top_5_events,
-            x='count',
-            y='index',
-            orientation='h',
-            title='Top 5 Disaster Events',
-            labels={'index': 'Disaster Event', 'count': 'Count'},
-            width=800,
-            height=500
-        )
-
-        # Display the horizontal bar chart
-        st.plotly_chart(fig_horizontal_bar, use_container_width=True)        
+        
 
         
         
@@ -284,31 +265,7 @@ with st.expander(f"Insights"):
         st.plotly_chart(fig, use_container_width=True)
         
         
-        # 2nd Diagram
-        location_counts = filtered_df['Location'].value_counts().reset_index(name='count')
 
-        # Sort the location counts to find the top 10 countries
-        top_10_countries = location_counts.head(10)
-
-        # Plot the vertical bar chart using Plotly Express
-        fig_vertical_bar = px.bar(
-            top_10_countries,
-            x='index',
-            y='count',
-            title='Top 10 Countries by Disaster Occurrences',
-            labels={'index': 'Country', 'count': 'Count'},
-            width=800,
-            height=500
-        )
-
-        # Customize the appearance of the bar chart
-        fig_vertical_bar.update_traces(marker_color='skyblue', marker_line_color='black', marker_line_width=1)
-
-        # Rotate x-axis labels for better readability
-        fig_vertical_bar.update_layout(xaxis_tickangle=-45)
-
-        # Display the vertical bar chart
-        st.plotly_chart(fig_vertical_bar, use_container_width=True)
         
         # 3rd Diagram
         
