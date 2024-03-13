@@ -293,10 +293,10 @@ with st.expander(f"Insights"):
         # Plot the vertical bar chart using Plotly Express
         fig_vertical_bar = px.bar(
             top_10_countries,
-            x='index',
+            x='Location',  # Use 'Location' as x to represent the country names
             y='count',
             title='Top 10 Countries by Disaster Occurrences',
-            labels={'index': 'Country', 'count': 'Count'},
+            labels={'Location': 'Country', 'count': 'Count'},
             width=800,
             height=500
         )
