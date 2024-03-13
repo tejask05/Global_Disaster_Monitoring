@@ -24,7 +24,7 @@ collection = db["disaster_info"]
 df = pd.DataFrame(list(collection.find()))
 df.drop_duplicates(subset='title', inplace=True)
 # Convert the 'timestamp' column to datetime
-df['timestamp'] = pd.to_datetime(df['timestamp'])
+df['timestamp'] = pd.to_datetime(df['timestamp'],errors='coerce')
 df = df.dropna(subset=['Latitude', 'Longitude'])
 exclude_locations = ['avalanche', 'blizzard', 'cyclone', 'drought', 'earthquake', 
                      'flood', 'heatwave', 'hurricane', 'landslide', 'storm', 
