@@ -243,7 +243,7 @@ with st.expander(f"Insights"):
             y='index',
             orientation='h',
             title='Top 7 Disaster Events',
-            labels={'index': 'Disaster Event', 'count': 'Count'},
+            labels={'Disaster Event','Count'},
             width=800,
             height=500
         )
