@@ -215,20 +215,6 @@ with st.expander(f"Insights"):
 
     with col1:
         
-        event_location_counts = filtered_df.groupby(['disaster_event', 'Location']).size().reset_index(name='count')
-
-        # Plot the donut chart using Plotly Express
-        fig_donut = px.sunburst(
-            event_location_counts,
-            path=['disaster_event', 'Location'],
-            values='count',
-            title='Distribution of Disaster Events by Country',
-            width=800,
-            height=600
-        )
-
-        # Display the donut chart
-        st.plotly_chart(fig_donut, use_container_width=True)
         
         #Fig 2
         
