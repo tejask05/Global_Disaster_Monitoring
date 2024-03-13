@@ -1,10 +1,9 @@
 import pandas as pd
 import streamlit as st
-import seaborn as sns
 from streamlit_folium import st_folium
 from datetime import datetime, timedelta, timezone
 from pymongo import MongoClient
-from folium.plugins import MarkerCluster  # Import MarkerCluster
+from folium.plugins import MarkerCluster  
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import plotly.express as px
