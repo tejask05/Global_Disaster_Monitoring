@@ -239,9 +239,11 @@ with st.expander(f"Insights"):
         # Plot the horizontal bar chart using Plotly Express
         fig_horizontal_bar = px.bar(
             top_5_events,
+            x='count',
+            y='disaster_event',
             orientation='h',
             title='Top 7 Disaster Events',
-            labels={'Disaster Event','Count'},
+            labels={'disaster_event': 'Disaster Event', 'count': 'Count'},
             width=800,
             height=500
         )
