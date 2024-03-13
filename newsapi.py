@@ -10,7 +10,6 @@ from wordcloud import WordCloud
 import plotly.express as px
 import plotly.graph_objects as go
 
-
 # MongoDB Atlas connection URI
 uri = "mongodb+srv://aryanrvimpadapu:MUTBZgApDRVxxIXY@cluster0.fs4he7a.mongodb.net/?retryWrites=true&w=majority"
 
