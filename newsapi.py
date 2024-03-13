@@ -228,12 +228,11 @@ with st.expander(f"Insights"):
 
         # Display the donut chart
         st.plotly_chart(fig_donut, use_container_width=True)
+
+      
         #Fig 2
         
 
-
-        # Display the horizontal bar chart
-        st.plotly_chart(fig_horizontal_bar, use_container_width=True)
         
         
         #Fig 3
