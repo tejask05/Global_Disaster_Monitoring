@@ -3,6 +3,10 @@
 
 This project provides an interactive web application for visualizing geospatial data related to various disaster events. It utilizes data from the GeoNews database and allows users to filter and explore disaster events based on different criteria such as event type, date range, and location.
 
+## Project URL
+
+The project can be viewed at [geonews.streamlit.app](https://geonews.streamlit.app).
+
 ## Features
 
 - **Interactive Map Visualization**: View the geographical distribution of disaster events on an interactive map powered by Folium.
@@ -37,6 +41,3 @@ This project provides an interactive web application for visualizing geospatial 
 
 Contributions are welcome! Feel free to open issues or pull requests for any improvements or bug fixes.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
