@@ -34,7 +34,13 @@ The project can be viewed at [geonews.streamlit.app](https://geonews.streamlit.a
 - WordCloud
 - MongoDB
 
-## Example Screenshots
+## Example Video For Disaster Monitoring
+
+
+https://github.com/ARYANRVIMPADAPU/GeoNews/assets/106469555/a907859a-a6e8-4c24-a961-c834cd3d55c2
+
+
+
 
 
 ## Contributing
