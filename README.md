@@ -11,7 +11,7 @@ The project can be viewed at [geonews.streamlit.app](https://geonews.streamlit.a
 
 - **Interactive Map Visualization**: View the geographical distribution of disaster events on an interactive map powered by Folium.
 - **Filtering Options**: Filter disaster events based on event type and date range using Streamlit sidebar widgets.
-- **Insights and Analytics**: Gain insights into disaster events through various visualizations including charts, word clouds, and event counts over time.
+- **Insights and Analytics**: Gain insights into disaster events through various interactive visualizations including charts, word clouds, and event counts over time.
 - **Key Events Marquee**: Display a scrolling marquee in the sidebar showcasing recent key events with clickable links to more information.
 - **Dynamic Updates**: The application dynamically updates visualizations and data based on user-selected filters.
 
