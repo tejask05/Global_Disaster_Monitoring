@@ -35,8 +35,8 @@ This newapi script fetches live disaster-related news articles from the News API
 2. Make sure you have installed all required Python dependencies listed in the `requirements.txt`.
 3. Obtain a News API key and set it as `NEWSAPI_KEY` variable.
 4. Update the `exclude_locations` list to exclude any additional irrelevant locations.
-5. Run the script `newapi.py`. It will fetch live data, process it, and insert it into your `MongoDB database`.
-6. Set up a MongoDB Atlas account and configure the connection URI in the `geonews.py` file.
+5. Run the script `datacollection.py`. It will fetch live data, process it, and insert it into your `MongoDB database`.
+6. Set up a MongoDB Atlas account and configure the connection URI in the `newsapi.py` file.
 7. Run the Streamlit application using the command `streamlit run geonews.py`.
 8. Access the application in your web browser at the provided URL.
 
