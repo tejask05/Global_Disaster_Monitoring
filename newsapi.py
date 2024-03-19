@@ -24,7 +24,9 @@ collection = db["testing"]
 df = pd.DataFrame(list(collection.find()))
 
 # Convert the 'timestamp' column to datetime
-df['timestamp'] = pd.to_datetime(df['timestamp'],errors='coerce')
+# Convert the 'timestamp' column to datetime and localize it to UTC timezone
+df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce').dt.tz_localize('UTC')
+
 
 # Setting page configuration to occupy the entire width
 st.set_page_config(layout="wide")
