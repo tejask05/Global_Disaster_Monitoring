@@ -18,7 +18,7 @@ client = MongoClient(uri)
 
 # Access the GeoNews database and disaster_info collection
 db = client["GeoNews"]
-collection = db["disaster_info"]
+collection = db["testing"]
 
 # Convert MongoDB cursor to DataFrame
 df = pd.DataFrame(list(collection.find()))
