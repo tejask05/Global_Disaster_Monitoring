@@ -23,6 +23,8 @@ collection = db["disaster_info"]
 # Convert MongoDB cursor to DataFrame
 df = pd.DataFrame(list(collection.find()))
 
+# Convert the 'timestamp' column to datetime
+df['timestamp'] = pd.to_datetime(df['timestamp'],errors='coerce')
 
 # Setting page configuration to occupy the entire width
 st.set_page_config(layout="wide")
