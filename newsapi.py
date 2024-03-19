@@ -22,7 +22,7 @@ collection = db["disaster_info"]
 
 # Convert MongoDB cursor to DataFrame
 df = pd.DataFrame(list(collection.find()))
-df.drop_duplicates(subset='title', inplace=True)
+"""df.drop_duplicates(subset='title', inplace=True)
 # Convert the 'timestamp' column to datetime
 df['timestamp'] = pd.to_datetime(df['timestamp'],errors='coerce')
 df = df.dropna(subset=['Latitude', 'Longitude'])
@@ -41,7 +41,7 @@ df['date_only'] = df['timestamp'].dt.strftime('%Y-%m-%d')
 
 # Drop duplicate rows based on the combination of date_only, disaster_event, and Location
 df.drop_duplicates(subset=['date_only', 'disaster_event', 'Location'], inplace=True)
-df.drop(columns=['date_only'], inplace=True)
+df.drop(columns=['date_only'], inplace=True)"""
 
 # Setting page configuration to occupy the entire width
 st.set_page_config(layout="wide")
