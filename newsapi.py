@@ -13,6 +13,7 @@ import plotly.graph_objects as go
 
 
 # MongoDB Atlas connection URI
+# MongoDB Atlas connection URI
 uri = "mongodb+srv://aryanrvimpadapu:MUTBZgApDRVxxIXY@cluster0.fs4he7a.mongodb.net/?retryWrites=true&w=majority"
 
 # Create a new client and connect to the server
@@ -158,8 +159,6 @@ else:
 
         # Displaying only selected columns
         st.write(filtered_df[columns_to_display])
-        
-
 
     with st.expander(f"Insights"):
     
