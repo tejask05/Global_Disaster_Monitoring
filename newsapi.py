@@ -1,14 +1,16 @@
 import pandas as pd
-import streamlit as st
 import folium
+import streamlit as st
+import seaborn as sns
 from streamlit_folium import st_folium
 from datetime import datetime, timedelta, timezone
 from pymongo import MongoClient
-from folium.plugins import MarkerCluster  
+from folium.plugins import MarkerCluster  # Import MarkerCluster
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import plotly.express as px
 import plotly.graph_objects as go
+
 
 # MongoDB Atlas connection URI
 uri = "mongodb+srv://aryanrvimpadapu:MUTBZgApDRVxxIXY@cluster0.fs4he7a.mongodb.net/?retryWrites=true&w=majority"
@@ -156,6 +158,7 @@ else:
 
         # Displaying only selected columns
         st.write(filtered_df[columns_to_display])
+        
 
 
     with st.expander(f"Insights"):
