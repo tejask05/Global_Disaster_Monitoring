@@ -64,8 +64,11 @@ Ensure that your MongoDB Atlas cluster is properly configured to accept incoming
 
 ## Example Video For Disaster Monitoring
 
+https://github.com/user-attachments/assets/4f75711c-5315-499b-bc76-1e87ef8165fb
 
-https://github.com/ARYANRVIMPADAPU/GeoNews/assets/106469555/a907859a-a6e8-4c24-a961-c834cd3d55c2
+
+https://github.com/user-attachments/assets/325df90a-90dd-421a-bf77-65b9c95a2b67
+
 
 
 
