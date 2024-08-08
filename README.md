@@ -6,7 +6,7 @@ This project provides an interactive web application for visualizing geospatial 
 
 ## Project URL
 
-The project can be viewed at [geonews.streamlit.app](https://geonews.streamlit.app).
+The project can be viewed at [global-disaster-monitoring.streamlit.app]([https://geonews.streamlit.app](https://global-disaster-monitoring.streamlit.app)).
 
 ## Features
 
