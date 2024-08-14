@@ -10,7 +10,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
-cred = credentials.Certificate("geonews-f333b-68363d383656.json")
+cred = credentials.Certificate("geonews-f7333b-68S4T363d83976.json")
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 
@@ -19,8 +19,8 @@ def main():
     
 
     def send_email(email):
-        email_sender  = 'v.aryanrajurao@gmail.com'
-        email_password = 'xdfe gzjj cpel evur'
+        email_sender  = 'v.argrgdsyan123435gjkhifgb.com'
+        email_password = 'trfe ftjj cpbl gtgr'
         email_receiver = email
         subject = "Welcome to Geo-Spatial Visualization for Disaster Monitoring"
 
