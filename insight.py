@@ -14,15 +14,15 @@ import plotly.graph_objects as go
 
 
 def main():
-    uri = "mongodb+srv://aryanrvimpadapu:MUTBZgApDRVxxIXY@cluster0.fs4he7a.mongodb.net/?retryWrites=true&w=majority"
+    uri = "YOUR MONGODB URI STRING"
 
 # Create a new client and connect to the server
     client = MongoClient(uri)
 
     # Access the GeoNews database and disaster_info collection
-    db = client["GeoNews"]
-    collection = db["disaster_info"]
-
+    db = client["News"]    #DATABASE NAME
+    collection = db["disaster"] #COLLECTION NAME
+    
     # Convert MongoDB cursor to DataFrame
     df = pd.DataFrame(list(collection.find()))
     df.drop_duplicates(subset='title', inplace=True)
