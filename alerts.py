@@ -10,8 +10,8 @@ from email.mime.text import MIMEText
 
 def main():
     def send_email(email):
-        email_sender  = 'v.aryanrajurao@gmail.com'
-        email_password = 'xdfe gzjj cpel evur'
+        email_sender  = 'v.aryanrajufdsrao@gmail.com'
+        email_password = 'xdke gejj cjel enur'
 
         email_receiver = email
         subject = "Subscription Confirmation"
@@ -77,14 +77,14 @@ def main():
 
     
 
-    uri = "mongodb+srv://aryanrvimpadapu:MUTBZgApDRVxxIXY@cluster0.fs4he7a.mongodb.net/?retryWrites=true&w=majority"
+    uri = "mongouri" #Your mongo Uri
 
         # Create a new client and connect to the server
     client = MongoClient(uri)
 
     # Access the GeoNews database and disaster_info collection
-    db = client["GeoNews"]
-    collection = db["disaster_info"]
+    db = client["News"]    #DATABASE NAME
+    collection = db["disaster"] #COLLECTION NAME
 
     # Convert MongoDB cursor to DataFrame
     df = pd.DataFrame(list(collection.find()))
