@@ -270,6 +270,3 @@ def main():
     # Render the marquee in the sidebar with Streamlit
     st.sidebar.markdown(marquee_html, unsafe_allow_html=True)
 
-if __name__ == "__main__":
-    main()
-    st.set_page_config(layout="wide")
