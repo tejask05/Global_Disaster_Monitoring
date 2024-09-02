@@ -18,18 +18,14 @@ def main():
 
     # Access the GeoNews database and disaster_info collection
     
-    db = client["News"]    #DATABASE NAME
-    collection = db["disaster"] #COLLECTION NAME
+    db = client["YOUR DATABASE NAME"]    #DATABASE NAME
+    collection = db["YOUR COLLECTION"] #COLLECTION NAME
     
     # Convert MongoDB cursor to DataFrame
     df = pd.DataFrame(list(collection.find()))
     df.drop_duplicates(subset='title', inplace=True)
     df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
     df = df.dropna(subset=['Latitude', 'Longitude'])
-    exclude_locations = ['avalanche', 'blizzard', 'cyclone', 'drought', 'earthquake', 
-                        'flood', 'heatwave', 'hurricane', 'landslide', 'storm', 
-                        'tornado', 'tsunami', 'volcano', 'wildfire','hockey','a.i.','netflix']
-
     # Filter the DataFrame to exclude the locations in the exclude_locations list
     df = df[~df['Location'].str.lower().isin(exclude_locations)]
     df = df[~df['url'].str.lower().str.contains('politics|yahoo|sports')]
@@ -83,20 +79,20 @@ def main():
         # Function to determine custom icon path based on disaster event
         def get_custom_icon_path(disaster_event):
             icon_paths = {
-                "Avalanche": 'https://cdn-icons-png.flaticon.com/128/3496/3496600.png',
-                "Blizzard": 'https://cdn-icons-png.flaticon.com/128/1781/1781928.png',
-                "Cyclone": 'https://cdn-icons-png.flaticon.com/128/10159/10159051.png',
-                "Drought": 'https://cdn-icons-png.flaticon.com/128/7858/7858410.png',
-                "Earthquake": 'https://icons.iconarchive.com/icons/icons8/windows-8/512/Weather-Earthquakes-icon.png',
-                "Flood": 'https://cdn4.iconfinder.com/data/icons/eldorado-weather/40/flood-512.png',
-                "Heatwave": 'https://cdn-icons-png.flaticon.com/128/7110/7110118.png',
-                "Hurricane": 'https://cdn-icons-png.flaticon.com/128/798/798326.png',
-                "Landslide": 'https://cdn-icons-png.flaticon.com/128/3496/3496896.png',
-                "Storm": 'https://cdn-icons-png.flaticon.com/128/8048/8048062.png',
-                "Tornado": 'https://cdn-icons-png.flaticon.com/128/7251/7251087.png',
-                "Tsunami": 'https://cdn-icons-png.flaticon.com/128/2856/2856848.png',
-                "Volcano": 'https://cdn-icons-png.flaticon.com/128/7265/7265026.png',
-                "Wildfire": 'https://cdn-icons-png.flaticon.com/128/2321/2321741.png',
+                "Avalanche": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Blizzard": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Cyclone": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Drought": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Earthquake": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Flood": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Heatwave": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Hurricane": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Landslide": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Storm": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Tornado": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Tsunami": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Volcano": 'YOUR ICON (IMAGE) LINKS HERE',
+                "Wildfire": 'YOUR ICON (IMAGE) LINKS HERE',
             }
             return icon_paths.get(disaster_event, 'https://cdn-icons-png.flaticon.com/128/4357/4357606.png')
 
@@ -120,10 +116,10 @@ def main():
 
         # Map style options
         base_map_styles = {
-            'Terrain': 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}',
-            'Satellite': 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-            'Ocean': 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}',
-            'Detail': 'https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}'
+            'Terrain': 'ENTER TERRAIN MAP STYLE LINK HERE',
+            'Satellite': 'ENTER SATELLITE MAP STYLE LINK HERE',
+            'Ocean': 'ENTER OCEAN MAP STYLE LINK HERE',
+            'Detail': 'ENTER DETAIL MAP STYLE LINK HERE'
         }
 
         # Add base map styles as layers
@@ -193,7 +189,3 @@ def main():
 
     # Render the marquee in the sidebar with Streamlit
     st.sidebar.markdown(marquee_html, unsafe_allow_html=True)
-
-if __name__ == "__main__":
-    main()
-    st.set_page_config(layout="wide")
