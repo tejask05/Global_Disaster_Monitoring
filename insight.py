@@ -20,19 +20,15 @@ def main():
     client = MongoClient(uri)
 
     # Access the GeoNews database and disaster_info collection
-    db = client["News"]    #DATABASE NAME
-    collection = db["disaster"] #COLLECTION NAME
+    db = client["YOUR DATABASE NAME HERE"]    #DATABASE NAME
+    collection = db["YOUR COLLECTION NAME HERE"] #COLLECTION NAME
     
     # Convert MongoDB cursor to DataFrame
     df = pd.DataFrame(list(collection.find()))
     df.drop_duplicates(subset='title', inplace=True)
     # Convert the 'timestamp' column to datetime
     df['timestamp'] = pd.to_datetime(df['timestamp'],errors='coerce')
-    df = df.dropna(subset=['Latitude', 'Longitude'])
-    exclude_locations = ['avalanche', 'blizzard', 'cyclone', 'drought', 'earthquake', 
-                        'flood', 'heatwave', 'hurricane', 'landslide', 'storm', 
-                        'tornado', 'tsunami', 'volcano', 'wildfire','hockey','a.i.','netflix']
-
+    
     # Filter the DataFrame to exclude the locations in the exclude_locations list
     df = df[~df['Location'].str.lower().isin(exclude_locations)]
     df = df[~df['url'].str.lower().str.contains('politics|yahoo|sports')]
