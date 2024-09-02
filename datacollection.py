@@ -39,10 +39,7 @@ def identify_disaster_event(title):
         return 'Unknown'
     
     # Identify the type of disaster event based on keywords
-    for keyword in disaster_keywords:
-        if keyword.lower() in title.lower():
-            return keyword.capitalize()
-
+    
     return 'Unknown'
 
 def extract_location_ner(text):
@@ -89,7 +86,7 @@ if __name__ == "__main__":
     df['source'] = df['source'].apply(lambda x: x['name'])
     
     df['location_ner'] = df['title'].apply(extract_location_ner)
-    df['location_ner'] = df['location_ner'].apply(lambda x: np.nan if len(x) == 0 else x)
+    
     df.dropna(axis=0, inplace=True)
 
     def fun(text):
@@ -121,16 +118,13 @@ if __name__ == "__main__":
     df['Location'] = df.apply(create_location, axis=1)
     df = df.dropna(subset=['Location'])
 
-    exclude_locations = ['avalanche', 'blizzard', 'cyclone', 'drought', 'earthquake', 
-                         'flood', 'heatwave', 'hurricane', 'landslide', 'storm', 
-                         'tornado', 'tsunami', 'volcano', 'wildfire', 'hockey', 'a.i.']
-
+    
     df = df[~df['Location'].str.lower().isin(exclude_locations)]
     df = df[~df['url'].str.lower().str.contains('politics|yahoo|sports|entertainment|cricket')]
 
     df['Coordinates'] = df['Location'].apply(get_coordinates)
 
-    df[['Latitude', 'Longitude']] = pd.DataFrame(df['Coordinates'].apply(lambda x: x if x else (np.nan, np.nan)).tolist(), index=df.index)
+   
 
     df.drop('Coordinates', axis=1, inplace=True)
 
@@ -143,8 +137,8 @@ if __name__ == "__main__":
     client = MongoClient(uri, server_api=ServerApi('1'))
 
     # Access the GeoNews database and disaster_info collection
-    db = client["GeoNews"]
-    collection = db["disaster_info"]
+    db = client["YOUR DATABASE NAME HERE"]
+    collection = db["YOUR COLLECTION NAME HERE"]
 
     # Create a DataFrame
 
