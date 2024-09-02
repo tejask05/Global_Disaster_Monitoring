@@ -10,8 +10,8 @@ from email.mime.text import MIMEText
 
 def main():
     def send_email(email):
-        email_sender  = 'v.aryanrajufdsrao@gmail.com'
-        email_password = 'xdke gejj cjel enur'
+        email_sender  = 'YOUR EMAIL HERE'
+        email_password = 'YOUR EMAIL PASSWORD HERE'
 
         email_receiver = email
         subject = "Subscription Confirmation"
@@ -77,24 +77,21 @@ def main():
 
     
 
-    uri = "mongouri" #Your mongo Uri
+    uri = "YOUR MONGO URI STRING HERE" 
 
         # Create a new client and connect to the server
     client = MongoClient(uri)
 
     # Access the GeoNews database and disaster_info collection
-    db = client["News"]    #DATABASE NAME
-    collection = db["disaster"] #COLLECTION NAME
+    db = client["YOUR DATABASE HERE"]    #DATABASE NAME
+    collection = db["YOUR DATABASE HERE"] #COLLECTION NAME
 
     # Convert MongoDB cursor to DataFrame
     df = pd.DataFrame(list(collection.find()))
     df.drop_duplicates(subset='title', inplace=True)
     df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
     df = df.dropna(subset=['Latitude', 'Longitude'])
-    exclude_locations = ['avalanche', 'blizzard', 'cyclone', 'drought', 'earthquake', 
-                        'flood', 'heatwave', 'hurricane', 'landslide', 'storm', 
-                        'tornado', 'tsunami', 'volcano', 'wildfire','hockey','a.i.','netflix']
-
+    
     # Filter the DataFrame to exclude the locations in the exclude_locations list
     df = df[~df['Location'].str.lower().isin(exclude_locations)]
     df = df[~df['url'].str.lower().str.contains('politics|yahoo|sports')]
@@ -137,8 +134,8 @@ def main():
         elif selected_location==[None] or not selected_location:
             st.error('Location is not Selected')
         else:
-            subscriptions_db = client["GeoNews"]
-            subscriptions_collection = subscriptions_db["user_subscriptions"]
+            subscriptions_db = client["YOUR DATABASE NAME HERE"]
+            subscriptions_collection = subscriptions_db["YOUR COLLECTION NAME HERE"]
             subscription_data = {
                 "email": st.session_state.useremail,
                 "selected_events": selected_events,
@@ -150,5 +147,3 @@ def main():
             send_email(st.session_state.useremail)
 
 
-if __name__ == "__main__":
-    main()
