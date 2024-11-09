@@ -8,7 +8,7 @@ from geopy.exc import GeocoderTimedOut
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
-NEWSAPI_KEY = 'ENTER YOUR API KEY HERE'
+NEWSAPI_KEY = '04cdfe9daa2046f19dfe2683b838bc46'
 NEWSAPI_ENDPOINT = 'https://newsapi.org/v2/everything'
 
 disaster_keywords = ['earthquake', 'flood', 'tsunami', 'hurricane', 'wildfire', 'forestfire', 'tornado', 'cyclone', 'volcano', 'drought', 'landslide', 'storm', 'blizzard', 'avalanche', 'heatwave']
@@ -131,14 +131,14 @@ if __name__ == "__main__":
     df = df.dropna(subset=['Latitude', 'Longitude'])
 
     # MongoDB Atlas connection URI
-    uri = "ENTER YOUR MONGODB ATLAS CONNECTION STRING"
+    uri = "mongodb+srv://meradatabase:merapassword@disaster.2757i.mongodb.net/?retryWrites=true&w=majority&appName=Disaster"
 
     # Create a new client and connect to the server
     client = MongoClient(uri, server_api=ServerApi('1'))
 
     # Access the GeoNews database and disaster_info collection
-    db = client["YOUR DATABASE NAME HERE"]
-    collection = db["YOUR COLLECTION NAME HERE"]
+    db = client["GeoNews"]
+    collection = db["disaster_info"]
 
     # Create a DataFrame
 
